@@ -1,0 +1,108 @@
+<!-- /*
+* File: SignIn.vue
+* Project : 3D Plant VS Zombie
+* Author: 邵天奇
+* Email: 2200013082@stu.pku.edu.cn
+* Date: 2024.5-2024.6
+* Copyright: Copyright (c) 2024 邵天奇
+*/ -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style/style.css" />
+    <link rel="stylesheet" href="https://cdn.staticfile.net/font-awesome/4.7.0/css/font-awesome.css">
+    <title>计算器</title>
+</head>
+<body class="change-theme-elements sun">
+    <h1 class="change_color_element">计算器</h1>
+    <div class="calculator clearfix">
+        <div class="container change-theme-elements sun">
+            <div class="displayer_div">
+                <div class="mydisplayer inputdisplayer"></div>
+                <div class="mydisplayer inputfield">0</div>
+            </div>
+            <button onclick="onuserclick('(')"><span class="operator"><i class="change-theme-elements sun">(</i></span></button>
+            <button onclick="onuserclick(')')"><span class="operator"><i class="change-theme-elements sun">)</i></span></button>
+            <button onclick="onuserclick('c')"><span class="important-button"><i class="change-theme-elements sun">C</i></span></button>
+            <button onclick="onuserclick('Backspace')"><span class="operator"><i class="change-theme-elements sun">&larr;</i></span></button>
+            <button class="number" onclick="onuserclick('7')"><span class="change-theme-elements sun"><i class="change-theme-elements sun">7</i></span></button>
+            <button class="number" onclick="onuserclick('8')"><span class="change-theme-elements sun"><i class="change-theme-elements sun">8</i></span></button>
+            <button class="number" onclick="onuserclick('9')"><span class="change-theme-elements sun"><i class="change-theme-elements sun">9</i></span></button>
+            <button onclick="onuserclick('/')"><span class="operator"><i class="change-theme-elements sun">&divide;</i></span></button>
+            <button class="number" onclick="onuserclick('4')"><span class="change-theme-elements sun"><i class="change-theme-elements sun">4</i></span></button>
+            <button class="number" onclick="onuserclick('5')"><span class="change-theme-elements sun"><i class="change-theme-elements sun">5</i></span></button>
+            <button class="number" onclick="onuserclick('6')"><span class="change-theme-elements sun"><i class="change-theme-elements sun">6</i></span></button>
+            <button onclick="onuserclick('*')"><span class="operator"><i class="change-theme-elements sun">&times;</i></span></button>
+            <button class="number" onclick="onuserclick('1')"><span class="change-theme-elements sun"><i class="change-theme-elements sun">1</i></span></button>
+            <button class="number" onclick="onuserclick('2')"><span class="change-theme-elements sun"><i class="change-theme-elements sun">2</i></span></button>
+            <button class="number" onclick="onuserclick('3')"><span class="change-theme-elements sun"><i class="change-theme-elements sun">3</i></span></button>
+            <button onclick="onuserclick('-')"><span class="operator"><i class="change-theme-elements sun">-</i></span></button>
+            <button onclick="onuserclick('0')"><span class="change-theme-elements sun"><i class="change-theme-elements sun">0</i></span></button>
+            <button onclick="onuserclick('.')"><span class="change-theme-elements sun"><i class="change-theme-elements sun">.</i></span></button>
+            <button onclick="onuserclick('=')"><span class="important-button"><i class="blue-button">=</i></span></button>
+            <button onclick="onuserclick('+')"><span class="operator"><i class="change-theme-elements sun">+</i></span></button>
+        </div>
+    </div>
+    <div class="theme-box change-theme-elements sun clearfix">
+        <label class="switch">
+            <input type="checkbox" id="input">
+            <span class="slider"></span>
+        </label>
+    </div>
+    <div class="hint-text-box">当前计算速度</div>
+    <div id="author">作者 2200013082 邵天奇</div>
+    <div class="game-title">小游戏</div>
+    <div class="games">
+        <a href="./htmls/saolei.html" title="扫雷小游戏">
+            <div class="layer">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span class="brands"></span>
+            </div>
+            <div class="text">扫雷</div>
+            <img src="./pictures/扫雷图标.png" alt="">
+        </a>
+        <a href="./htmls/xiaochu.html" title="羊了个羊">
+            <div class="layer">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span class="brands"></span>
+            </div>
+            <div class="text">消除</div>
+            <img src="./pictures/羊了个羊图标.jpg" alt="">
+        </a>
+        <a href="./htmls/zhongbai.html" title="钟摆小游戏">
+            <div class="layer">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span class="brands"></span>
+            </div>
+            <div class="text">钟摆</div>
+            <img src="./pictures/钟摆图标.jpg" alt="">
+        </a>
+        <a href="./htmls/choujiang.html" title="抽奖小游戏">
+            <div class="layer">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span class="brands"></span>
+            </div>
+            <div class="text">抽奖</div>
+            <img src="./pictures/抽奖图标.png" alt="">
+        </a>
+    </div>
+    <script src="./scripts/main.js"></script>
+    <script src="./scripts/changethemescript.js"></script>
+    <script src="./scripts/authorboxscript.js"></script>
+</body>
+</html>

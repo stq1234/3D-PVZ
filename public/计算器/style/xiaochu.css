@@ -1,0 +1,138 @@
+/*
+* File: xiaochu.css
+* Project : 3D Plant VS Zombie
+* Author: 邵天奇
+* Email: 2200013082@stu.pku.edu.cn
+* Date: 2024.5-2024.6
+* Copyright: Copyright (c) 2024 邵天奇
+*/
+
+* {
+    box-sizing: border-box;
+}
+body {
+    margin: 0;
+}
+.main {
+    position: relative;
+}
+.item {
+    position: absolute;
+    background: no-repeat center center #ffffff;
+    border:1px solid #ddd;
+    background-size: 100%;
+    color: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 0;
+    transition: left .3s, top .3s, transform .3s;
+}
+.item:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    transition: background-color .2s;
+}
+.disabled:after {
+    
+    background-color: rgba(0,0,0,0.7);
+}
+.move-list {
+    border: 1px solid #ddd;
+    background-color: #ddd;
+    margin:0 auto;
+}
+
+.mybutton {
+    position: relative;
+    color: rgb(41, 56, 117);
+    text-decoration: none;
+    font-size: 19px;
+    letter-spacing: 0.1em;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: 0.5s;
+    right: 20px;
+    border: 2px solid var(--color);
+}
+
+li {
+    list-style: none;
+}
+
+li:last-child {
+    margin-top: 70px;
+}
+
+ul {
+    position: absolute;
+    right: 50px;
+    top: 50px;
+}
+
+.mybutton:hover {
+    letter-spacing: 0.3em;
+    background-color: var(--color);
+    color: var(--color);
+    box-shadow: 0 0 35px var(--color);
+}
+
+.mybutton::before {
+    content: "";
+    position: absolute;
+    inset: 2px;
+    background: white;
+}
+
+.mybutton span {
+    position: relative;
+    z-index: 1;
+}
+
+.mybutton i {
+    position: absolute;
+    inset: 0;
+    display: block;
+}
+
+.mybutton i::before {
+    content: "";
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    top: -6px;
+    left: 100%;
+    transform: translateX(-50%);
+    background: #27282c;
+    border: 2px solid var(--color);
+    transition: 0.5s;
+}
+
+.mybutton:hover i::before {
+    left: 0%;
+    transform: translateX(-50%) rotate(45deg);
+    box-shadow: 40px 39px var(--color);
+}
+
+.mybutton i::after {
+    content: "";
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    bottom: -6px;
+    left: 0;
+    transform: translateX(-50%);
+    background: #27282c;
+    border: 2px solid var(--color);
+    transition: 0.5s;
+}
+
+.mybutton:hover i::after {
+    left: 100%;
+    transform: translateX(-50%) rotate(-45deg);
+    box-shadow: 40px -39px var(--color);
+}

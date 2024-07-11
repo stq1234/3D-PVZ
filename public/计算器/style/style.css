@@ -1,0 +1,429 @@
+/*
+* File: style.css
+* Project : 3D Plant VS Zombie
+* Author: 邵天奇
+* Email: 2200013082@stu.pku.edu.cn
+* Date: 2024.5-2024.6
+* Copyright: Copyright (c) 2024 邵天奇
+*/
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    position: relative;
+    background-repeat: no-repeat;
+    background-size: cover;
+    /* width: 100%; */
+    /* height: 100%; */
+}
+
+body.sun {
+    background-image: url("../pictures/sun.jpeg");
+}
+
+body.moon {
+    background-image: url("../pictures/moon.jpg");
+}
+
+.claerfix:after {
+    content: "";
+    display: block;
+    clear: both;
+    height: 0;
+    overflow: hidden;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 3%;
+    height: 100%;
+    width: 30%;
+    grid-auto-rows: 75px;
+    border-radius: 25px;
+    padding: 25px;
+    /* margin: 25px auto; */
+    box-shadow: inset -8px 0 8px rgba(0, 0, 0, 0.14),
+        inset 0 -8px 8px rgba(0, 0, 0, 0.25),
+        10px 20px 25px rgba(0, 0, 0, 0.4);
+}
+
+.container.sun {
+    background: rgb(217, 240, 248);
+}
+
+.container.moon {
+    background: rgb(57, 42, 42);
+}
+
+.container>button {
+    font-size: 20px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    outline: none;
+}
+
+.container>button span {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    box-shadow: inset -8px 0 8px rgba(0, 0, 0, 0.14),
+        inset 0 -8px 8px rgba(0, 0, 0, 0.25),
+        0 0 0 2px rgba(0, 0, 0, 0.75), 10px 20px 25px rgba(0, 0, 0, 0.4);
+}
+
+.container>button span.operator {
+    background: linear-gradient(45deg, rgb(124, 155, 168), rgb(112, 167, 189));
+}
+
+.container>button span.moon {
+    background: linear-gradient(45deg, #282828, #202020);
+}
+
+.container>button span.sun {
+    background: linear-gradient(45deg, rgb(142, 203, 214), rgb(165, 233, 246));
+}
+
+.container>button span.important-button {
+    background: linear-gradient(45deg, rgb(235, 33, 20), rgba(238, 39, 15));
+}
+.container>button span:before {
+    content: "";
+    position: absolute;
+    top: 5px;
+    left: 6px;
+    bottom: 14px;
+    right: 12px;
+}
+
+.container>button span.operator:before {
+
+    background: linear-gradient(45deg, rgb(115, 144, 155), rgb(119, 180, 205));
+    border-radius: 10px;
+    box-shadow: -10px -10px 10px rgba(255, 255, 255, 0.25), 10px 5px 10px rgba(0, 0, 0, 0.15);
+    border-left: 1px solid rgba(248, 4, 4, 0.267);
+    border-bottom: 1px solid rgba(248, 4, 4, 0.267);
+    border-top: 1px solid rgba(234, 241, 6, 0.6);
+}
+
+.container>button span.moon:before {
+    background: linear-gradient(90deg, #232323, #4a4a4a);
+    border-radius: 10px;
+    box-shadow: -10px -10px 10px rgba(255, 255, 255, 0.25), 10px 5px 10px rgba(0, 0, 0, 0.15);
+    border-left: 1px solid #0004;
+    border-bottom: 1px solid #0004;
+    border-top: 1px solid #0009;
+}
+
+.container>button span.important-button:before {
+    background: linear-gradient(45deg, #e21414e0, #e6b909e8);
+    border-radius: 10px;
+    box-shadow: -10px -10px 10px rgba(255, 255, 255, 0.25), 10px 5px 10px rgba(0, 0, 0, 0.15);
+    border-left: 1px solid rgba(166, 17, 156, 0.267);
+    border-bottom: 1px solid rgba(238, 33, 207, 0.267);
+    border-top: 1px solid rgba(34, 162, 212, 0.6);
+}
+.container>button span.sun:before{
+    background: linear-gradient(45deg, rgb(111, 176, 187), rgb(175, 233, 244));
+    border-radius: 10px;
+    box-shadow: -10px -10px 10px rgba(255, 255, 255, 0.25), 10px 5px 10px rgba(0, 0, 0, 0.15);
+    border-left: 1px solid rgba(248, 4, 4, 0.267);
+    border-bottom: 1px solid rgba(248, 4, 4, 0.267);
+    border-top: 1px solid rgba(228, 228, 226, 0.6);
+}
+
+.container>button span i {
+    position: absolute;
+    font-style: normal;
+    font-size: 30px;
+    font-weight: 700;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.container>button span i.sun {
+    color: rgb(237, 244, 21);
+}
+
+.container>button span i.moon {
+    color: white;
+}
+
+.container>button span i.blue-button {
+    color: rgb(237, 244, 21);
+}
+
+.theme-box input[type="checkbox"] {
+    visibility: hidden;
+    display: none;
+}
+
+.theme-box {
+    width: 150px;
+    position: absolute;
+    right: 50px;
+    top: 50px;
+}
+
+.theme-box *,
+.theme-box:after,
+.theme-box:before {
+    box-sizing: border-box;
+}
+
+.theme-box .switch {
+    position: relative;
+    width: 111px;
+    height: 48px;
+    display: inline-block;
+    filter: drop-shadow(0 4px 4px #ccc);
+}
+
+.theme-box .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #f4f4f5;
+    transition: .4s;
+    border-radius: 30px;
+}
+
+.theme-box .slider:before {
+    position: absolute;
+    content: "";
+    height: 38px;
+    width: 38px;
+    border-radius: 20px;
+    left: 8px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: linear-gradient(40deg, #FF0000, #ff8c00, 70%);
+    transition: .4s;
+}
+
+.theme-box input:checked+.slider {
+    background-color: #444;
+}
+
+.theme-box input:checked+.slider:before {
+    left: calc(100% - 46px);
+    background: #444;
+    box-shadow: inset -3px -2px 5px -2px #8983f7, inset -10px -4px 0 0 #a3dafb;
+}
+
+.theme-box input+.slider:before {
+    background: linear-gradient(40deg, #FF0000, #ff8c00 70%);
+}
+
+h1 {
+    text-align: center;
+    transition: color 0.9s ease-in-out;
+}
+
+.calculator {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    height: 550px;
+    margin-top: 30px;
+    padding-top: 25px;
+    padding-bottom: 25px;
+}
+
+.mydisplayer {
+    /* border: 1px solid blue; */
+    width: 98%;
+    height: 42%;
+    margin-top: 4px;
+    margin-bottom: 2px;
+    margin-left: 1%;
+    text-align: right;
+}
+
+.displayer_div {
+    grid-column: 1 / 5;
+    grid-row: 1;
+    /* border: 2px solid red; */
+    background-color: rgb(167, 174, 124);
+    border-radius: 15px;
+    /* margin-bottom: 5px; */
+}
+
+.inputfield {
+    height: 52%;
+    font-size: 28px;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.inputfield:hover {
+    overflow: auto;
+}
+
+.inputdisplayer {
+    height: 28%;
+    font-size: 12px;
+    color: rgb(245, 249, 9);
+}
+
+#author {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    white-space: nowrap;
+    font-size: 25px;
+    z-index: -1;
+}
+
+.hint-text-box {
+    margin-top: 50px;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.6);
+    display: inline-block;
+    width: auto;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/**/
+.games {
+    position: absolute;
+    right: 40px;
+    top: 35%;
+    display: grid;
+    grid-template-rows: repeat(1fr, 3);
+    grid-auto-rows: 120px;
+    font-family: "Poppins", sans-serif;
+}
+
+.games img {
+    width: 75px;
+    height: 75px;
+    position: absolute;
+    top: 0;
+    transition: opacity 0.7s ease-in-out;
+}
+
+.games a:hover img {
+    opacity: 0;
+}
+
+.games a {
+    /* border: 1px solid red; */
+    width: 75px;
+    height: 75px;
+    text-decoration: none;
+    display: block;
+    position: relative;
+}
+
+.games .layer {
+    width: 100%;
+    height: 100%;
+    transition: transform 0.3s;
+}
+
+.games span {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    border: 1px solid;
+    border-radius: 5px;
+    transition: all 3s;
+}
+
+.games .text {
+    position: absolute;
+    bottom: -5px;
+    font-weight: 600;
+    font-size: 17px;
+    transition: all 1.5s ease;
+    opacity: 0;
+}
+
+.games a:hover .text {
+    transform: translate(23px, -40px);
+    font-size: 20px;
+    opacity: 1;
+}
+
+.games a:nth-child(1) span,
+.games a:nth-child(1) .text {
+    color: #1dcaff;
+    border-color: #1dcaff;
+}
+
+.games a:nth-child(2) span,
+.games a:nth-child(2) .text {
+    color: #ff0050;
+    border-color: #ff0050;
+}
+
+.games a:nth-child(3) span,
+.games a:nth-child(3) .text {
+    color: green;
+    border-color: green;
+}
+
+.games a:hover .layer {
+    transform: rotate(-35deg) skew(20deg);
+}
+
+.games a:hover span:nth-child(1) {
+    opacity: 0.2;
+}
+
+.games a:hover span:nth-child(2) {
+    opacity: 0.4;
+    transform: translate(5px, -5px);
+}
+
+.games a:hover span:nth-child(3) {
+    opacity: 0.6;
+    transform: translate(10px, -10px);
+}
+
+.games a:hover span:nth-child(4) {
+    opacity: 0.8;
+    transform: translate(15px, -15px);
+}
+
+.games a:hover span:nth-child(5) {
+    opacity: 1;
+    transform: translate(20px, -20px);
+}
+
+.games a:hover:nth-child(1) span {
+    box-shadow: -1px 1px 3px #1dcaff;
+}
+
+.games a:hover:nth-child(2) span {
+    box-shadow: -1px 1px 3px #ff0050;
+}
+
+.games a:hover:nth-child(3) span {
+    box-shadow: -1px 1px 3px green;
+}
+
+.game-title {
+    position: fixed;
+    top: 170px;
+    right: 43px;
+    font-weight: 800;
+    color: red;
+    font-size: 25px;
+}
